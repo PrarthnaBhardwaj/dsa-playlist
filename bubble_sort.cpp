@@ -2,7 +2,7 @@
 using namespace std;
 void bubble_sort(int arr[],int n)
 {
-    int swapCount = 0;
+    int didswap = 0;
     for(int i=n-1;i>0;i--)
     {
         for(int j=0;j<i;j++)
@@ -12,11 +12,11 @@ void bubble_sort(int arr[],int n)
                 int temp = arr[j+1];
                 arr[j+1] = arr[j];
                 arr[j] = temp;
-                swapCount = 1;
+                didswap = 1;
             }
         }
-        if(swapCount == 0) // if there is no swapping happened then array is already sorted and we do not need to iterate over array each time:
-            break;
+        if(didswap == 0) // to check if no swap happens it means array is already sorted:
+        break;
     }
 }
 int main()
